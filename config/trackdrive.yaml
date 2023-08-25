@@ -36,7 +36,7 @@ initial_velocity: 2
 
 mission: trackdrive          # [trackdrive, skidpad, acceleration]
 
-controller: stanley # [mpc, stanley,lqr,mpc_lat,mpc_kin,mpcc]
+controller: lqr # [mpc, stanley,lqr,mpc_lat,mpc_kin,mpcc]
 
 simulation: true
 

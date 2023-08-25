@@ -27,7 +27,7 @@ typedef ns_control::ControlHandle ControlHandle;
 int main(int argc, char **argv)
 {
   std::ifstream infile;
-  infile.open("/home/shuangji/FSD_ALGO/src/result_min.csv");
+  infile.open("/home/shuangji/FSD_ALGO/src/ros/control/controller/result_min.csv");
   assert(infile.is_open());
 std::string line,cell;
   std::vector<double> x_point;
