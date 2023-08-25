@@ -29,7 +29,7 @@
 
 #include "Solver/solver_base.h"
 #include "Solver/mpc_kin_solver.h"
-#include "Solver/pure_pursuit_solver.h"
+#include "Solver/stanley_solver.h"
 #include"Solver/lqr_solver.h"
 //#include"Solver/mpc_mine.h"
 #include"Solver/mpc_lat.h"
@@ -65,9 +65,9 @@ namespace ns_control {
 
         Solver *solver_;
      //  MPC_KIN_Solver mpc_solver_;
-        Pure_Pursuit_Solver pure_pursuit_solver_;
+        Stanley_Solver stanley_solver_;
         LQR_SOLVER lqr_solver_;
-        //MPC_MINE_Solver mpc_mine_solver_;
+    
         MPC_LAT_Solver mpc_lat_solver_;
       
         fsd_common_msgs::CarState car_state_;

@@ -23,7 +23,7 @@
 namespace ns_control
 {
 
-  class Pure_Pursuit_Solver : public Solver
+  class Stanley_Solver : public Solver
   {
   public:
     void solve(ns_control::csvtraj trackingpath_);

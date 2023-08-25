@@ -33,9 +33,9 @@ namespace ns_control
         controller_ = nh_.param<std::string>("controller", "pure_pursuit");
         control_param_.getParams(nh_, controller_);
 
-        if (controller_ == "pure_pursuit")
+        if (controller_ == "stanley")
         {
-            solver_ = &pure_pursuit_solver_;
+            solver_ = &stanley_solver_;
         }
         // else if (controller_ == "mpc_kin") { solver_ = &mpc_solver_;}
      
@@ -44,10 +44,6 @@ namespace ns_control
             solver_ = &lqr_solver_;
         }
       
-        //else if (controller_ == "mpc_mine")
-        //{
-         //   solver_ = &mpc_mine_solver_;
-       // }
          else if (controller_ == "mpc_lat")
          {
              solver_ = &mpc_lat_solver_;

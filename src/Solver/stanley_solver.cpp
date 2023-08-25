@@ -17,7 +17,7 @@
     along with FSD-Project.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include "Solver/pure_pursuit_solver.h"
+#include "Solver/stanley_solver.h"
 #include "ros/ros.h"
 #include <cmath>
 // #include "gp.h"
@@ -27,7 +27,7 @@
 namespace ns_control
 {
   // using namespace libgp;
-  void Pure_Pursuit_Solver::solve(ns_control::csvtraj trackingpath_)
+  void Stanley_Solver::solve(ns_control::csvtraj trackingpath_)
   {
     // ROS_INFO_STREAM("begin solve");
     // if (trajectory_.empty())
@@ -111,7 +111,7 @@ namespace ns_control
     //   std::cerr << "无法启动 GNU Plot 进程" << std::endl;
     // }
   }
-  void Pure_Pursuit_Solver::ComputeControlCmd(const VehicleState &vehicle_state)
+  void Stanley_Solver::ComputeControlCmd(const VehicleState &vehicle_state)
   {
     double e_y_;
     double e_theta_;
@@ -131,7 +131,7 @@ namespace ns_control
     {}
     control_command_.steering_angle.data = tra_steer;
   }
-  void Pure_Pursuit_Solver::ComputeLateralErrors(const double x, const double y, const double theta,
+  void Stanley_Solver::ComputeLateralErrors(const double x, const double y, const double theta,
                                                  double &e_y, double &e_theta)
 
   {
