@@ -2,6 +2,7 @@
 
 This ROS package is based on BITFSD open source version addad stanley lqr and mpc dynamics model(untested)
 
+to build this project ,go to BITFSD first https://github.com/bitfsd/fsd_algorithm to install FSSIM and the whole project,and change the controller ros package into this project,and don't need to start planning node because it just tracking an existing planning csv in controller/result_min.csv from a trajectory planning algo solving qp problem once based on min curvature
   #TODO
 
   add trajectory_planning
