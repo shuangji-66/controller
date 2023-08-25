@@ -47,15 +47,8 @@ namespace ns_control
         // std::cout<<"planning speed"<<trajectory_[1].velocity<<std::endl;
         // std::cout<<"real speed"<<state_.v<<std::endl;
         double desire_vel = control_param_.desire_vel;
-        std::cout << "yaw_rate   " << state_.r << std::endl;
-        std::cout << "vx" << state_.vx << std::endl;
-        std::cout << "vy" << state_.vy << std::endl;
-        std::cout << "w" << state_.w << std::endl;
         LoadContolConf();
         init();
-
-        std::cout << "trackingpath.size" << trackingpath_.size() << std::endl;
-
         int index = findnearestindex(trackingpath_, state_);
 
         std::cout << "find!!!!!!!!!" << index << std::endl;

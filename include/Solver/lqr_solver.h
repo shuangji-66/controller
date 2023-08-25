@@ -38,7 +38,7 @@ namespace ns_control
         void init();
         double PointDistanceSquare(const ns_control::CsvPoint &point, const double x,
                                const double y);
-                               int findnearestindex(const ns_control::csvtraj &path, VehicleState state_);
+        int findnearestindex(const ns_control::csvtraj &path, VehicleState state_);
         bool ComputeControlCommand(const VehicleState &localization,
                                     const Trajectory &planning_published_trajectory,
                                      fsd_common_msgs::ControlCommand &cmd);

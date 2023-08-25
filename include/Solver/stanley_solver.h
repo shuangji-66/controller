@@ -27,8 +27,11 @@ namespace ns_control
   {
   public:
     void solve(ns_control::csvtraj trackingpath_);
-    void ComputeControlCmd(const VehicleState &vehicle_state);
-    void ComputeLateralErrors(const double x, const double y, const double theta,
+        double PointDistanceSquare(const ns_control::CsvPoint &point, const double x,
+                                           const double y);
+ int findnearestindex(const ns_control::csvtraj &path, VehicleState state_);
+    void ComputeControlCmd(const Trajectory &traj,const VehicleState &vehicle_state);
+    void ComputeLateralErrors(const Trajectory &traj,const double x, const double y, const double theta,
                               double &e_y, double &e_theta);
                               
   };

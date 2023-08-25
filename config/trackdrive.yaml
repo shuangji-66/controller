@@ -36,7 +36,7 @@ initial_velocity: 2
 
 mission: trackdrive          # [trackdrive, skidpad, acceleration]
 
-controller: lqr # [mpc, pure_pursuit,lqr,mpc_lat,mpc_kin,mpcc]
+controller: stanley # [mpc, stanley,lqr,mpc_lat,mpc_kin,mpcc]
 
 simulation: true
 

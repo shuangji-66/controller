@@ -64,15 +64,11 @@ add_executable(${PROJECT_NAME}
         src/control_handle.cpp
         src/main.cpp
         include/Utils/types.h
-#        src/Track/track_base.cpp
-#        src/Track/trackdrive_track.cpp
-#        src/Track/line_track.cpp
-#        src/Track/skidpad_track.cpp
         src/Solver/solver_base.cpp
         #src/Solver/mpc_kin_solver.cpp
       #  src/Solver/mpc_mine.cpp
       #  src/Solver/mpc_osqp_solver.cpp
-        src/Solver/pure_pursuit_solver.cpp
+        src/Solver/stanley_solver.cpp
         src/Solver/lqr_solver.cpp
         src/Solver/pid_controller.cpp
         src/Solver/mpc_lat.cpp
