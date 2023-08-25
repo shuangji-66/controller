@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!--  ****** MPCC Node ******  -->
+    <rosparam file="$(find control)/params/mpc_params_fssim.yaml" command="load" />
+    <node name="mpc_node" pkg="control" type="Nonlinear_MPC_node.py" output="screen" />
+    
+
+</launch>

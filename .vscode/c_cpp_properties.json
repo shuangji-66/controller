@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/shuangji/FSD_ALGO/devel/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/planning/boundary_detector/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/control/controller/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/perception/darknet_ros/darknet_ros/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/common/fsd_tools/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/fssim_interface/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/perception/lidar_cluster/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/planning/line_detector/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/estimation/loam_velodyne/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/planning/path_generator/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/estimation/robot_localization/include/**",
+                "/home/shuangji/FSD_ALGO/src/ros/planning/skidpad_detector/include/**",
+                "/usr/include/**",
+                "/home/shuangji/FSD_ALGO/devel/.private/fsd_common_msgs/include",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/include",
+                "/home/shuangji/FSD_ALGO/src/ros/control/controller/MPCC",
+                "${workspaceFolder}",
+                "${workspaceFolder}/External/blasfeo/lib/include",
+                "${workspaceFolder}/External/hpipm/include",
+                "${workspaceFolder}/External/Json/include",
+                "${workspaceFolder}/External/matplotlib"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}
