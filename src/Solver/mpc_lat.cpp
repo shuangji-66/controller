@@ -192,7 +192,7 @@ namespace ns_control
     // 参考自:https://github.com/DhruvaKumar/model-predictive-control
     //  设置预测步长和控制周期，这里是10HZ一个MPC
 
-    size_t N = 10;
+    size_t N = 5;
 
     double dt = 0.1;
     const double L = 1.59;        // 这个是前轮轴心和后轮轴心的间距
@@ -208,7 +208,7 @@ namespace ns_control
     size_t r_start = vy_start + N;
     size_t epsilon_start = r_start + N;     // 横向误差
     size_t sigma_start = epsilon_start + N; // 偏航误差
-    size_t delta_start = sigma_start + N - 8;
+    size_t delta_start = sigma_start + N - 3;
     //  size_t D_start = delta_start + N - 1; // 加速度位置
     template <typename T>
     using Vec7 = Eigen::Matrix<T, 7, 1>;
@@ -228,18 +228,18 @@ namespace ns_control
             this->wei_ = wei;
             this->ref_point = traj;
         };
-        double Clf =88000;
-        double Clr = 88000;
+        double Clf =200000;
+        double Clr = 200000;
         double Sf = 0.2;
         double Sr = 0.2;
         // 前后轮侧偏刚度
-        double Cf = 88000;
-        double Cr = 88000;
+        double Cf = 200000;
+        double Cr = 200000;
         double Cm1 = 2145;
         double Cm2 = 175;
         double Cw = 0.5 * 1.206 * 0.5359 * 1.4;
         // 整车质量
-        double m = 500;
+        double m = 233;
         const double mass_fl = 233 / 4.0;            // 左前悬的质量
         const double mass_fr = 233 / 4.0;            // 右前悬的质量
         const double mass_rl = 233 / 4.0;            // 左后悬的质量

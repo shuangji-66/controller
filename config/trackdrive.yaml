@@ -36,8 +36,8 @@ initial_velocity: 2
 
 mission: trackdrive          # [trackdrive, skidpad, acceleration]
 
-controller: lqr # [mpc, stanley,lqr,mpc_lat,mpc_kin,mpcc]
+controller: mpc_kin # [mpc, stanley,lqr,mpc_lat,mpc_kin,mpcc]
 
 simulation: true
 
-node_rate: 100   # [Herz]
+node_rate: 50   # [Herz]

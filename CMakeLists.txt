@@ -65,13 +65,13 @@ add_executable(${PROJECT_NAME}
         src/main.cpp
         include/Utils/types.h
         src/Solver/solver_base.cpp
-        #src/Solver/mpc_kin_solver.cpp
+        src/Solver/mpc_kin_solver.cpp
       #  src/Solver/mpc_mine.cpp
       #  src/Solver/mpc_osqp_solver.cpp
         src/Solver/stanley_solver.cpp
         src/Solver/lqr_solver.cpp
         src/Solver/pid_controller.cpp
-        src/Solver/mpc_lat.cpp
+       # src/Solver/mpc_lat.cpp
         src/Utils/visual.cpp
      )
 #link_directories(${libgp_DIR}/lib)

@@ -30,14 +30,15 @@
 #include "Solver/solver_base.h"
 #include "Solver/mpc_kin_solver.h"
 #include "Solver/stanley_solver.h"
-#include"Solver/lqr_solver.h"
-//#include"Solver/mpc_mine.h"
-#include"Solver/mpc_lat.h"
+#include "Solver/lqr_solver.h"
+// #include"Solver/mpc_mine.h"
+// #include"Solver/mpc_lat.h"
 
+namespace ns_control
+{
 
-namespace ns_control {
-
-    class Control {
+    class Control
+    {
 
     public:
         Control(ros::NodeHandle &nh);
@@ -53,26 +54,23 @@ namespace ns_control {
         fsd_common_msgs::ControlCommand getCmd();
 
         visualization_msgs::MarkerArray PrePath_;
-    
-    private:
 
+    private:
         bool Check();
 
     private:
-
         ros::NodeHandle &nh_;
         std::string controller_;
 
         Solver *solver_;
-     //  MPC_KIN_Solver mpc_solver_;
+        MPC_KIN_Solver mpc_solver_;
         Stanley_Solver stanley_solver_;
         LQR_SOLVER lqr_solver_;
-    
-        MPC_LAT_Solver mpc_lat_solver_;
-      
+
+        // MPC_LAT_Solver mpc_lat_solver_;
+
         fsd_common_msgs::CarState car_state_;
         fsd_common_msgs::ControlCommand cmd_;
-
 
         Trajectory refline_;
 
@@ -80,4 +78,4 @@ namespace ns_control {
     };
 }
 
-#endif //CONTROL_HPP
+#endif // CONTROL_HPP

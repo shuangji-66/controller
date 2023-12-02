@@ -49,6 +49,7 @@ namespace ns_control
         index = i;
       }
     }
+    return index;
   }
   // using namespace libgp;
   void Stanley_Solver::solve(ns_control::csvtraj trackingpath_)

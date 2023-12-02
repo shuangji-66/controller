@@ -37,17 +37,17 @@ namespace ns_control
         {
             solver_ = &stanley_solver_;
         }
-        // else if (controller_ == "mpc_kin") { solver_ = &mpc_solver_;}
+         else if (controller_ == "mpc_kin") { solver_ = &mpc_solver_;}
      
         else if (controller_ == "lqr")
         {
             solver_ = &lqr_solver_;
         }
       
-         else if (controller_ == "mpc_lat")
-         {
-             solver_ = &mpc_lat_solver_;
-         }
+        //  else if (controller_ == "mpc_lat")
+        //  {
+        //      solver_ = &mpc_lat_solver_;
+        //  }
         else
         {
             ROS_ERROR("Undefined Solver name !");

@@ -72,7 +72,7 @@ namespace ns_control
         double dy = point.pointy - y;
         return dx * dx + dy * dy;
     }
-    
+
     int findnearestindex(const ns_control::csvtraj &path, VehicleState state_)
     {
         int index = 0;
@@ -116,7 +116,7 @@ namespace ns_control
             for (int i = 0; i < 40; ++i)
             {
                 int new_index = i + index;
-                ref_vel.push_back(trackingpath_[new_index].vel_flying+2);
+                ref_vel.push_back(trackingpath_[new_index].vel_flying + 2);
                 xpoint.push_back(trackingpath_[new_index].pointx);
                 ypoint.push_back(trackingpath_[new_index].pointy);
             }
@@ -257,7 +257,7 @@ namespace ns_control
             //   throttle_rate: 10
             //   desire_vel: 15
 
-            cost_weight << 100, 100, 10000, 50, 1000, 1000, 10;
+            cost_weight << 100, 100, 100, 50, 1000, 120000, 10;
             // 代价函数的目标，最小化横向误差，最小化偏航误差，最小化速度，加速度误差，同时要满足转向速度和加速度要相对平滑
             // 不能出现大的跳跃
             // fg[0]默认是优化目标函数
@@ -273,7 +273,8 @@ namespace ns_control
                 //             if (x_state[theta_start+t]-traj[t].yaw> M_PI) x_state[theta_start+t]-traj[t].yaw -= 2 * M_PI;
                 // if (x_state[theta_start+t]-traj[t].yaw < -M_PI) x_state[theta_start+t]-traj[t].yaw += 2 * M_PI;
                 // fg[0]+=0*CppAD::pow(x_state[theta_start+t]-traj[t].yaw,2);
-                fg[0] += cost_weight[2] * CppAD::pow(x_state[v_start + t] - vel_flying[t], 2);
+                // fg[0] += cost_weight[2] * CppAD::pow(x_state[v_start + t] - vel_flying[t], 2);
+                fg[0] += cost_weight[2] * CppAD::pow(x_state[v_start + t] - 8, 2);
             }
             // 计算最小系统输入
             for (int t = 0; t < N - 1; t++)
@@ -336,7 +337,7 @@ namespace ns_control
                 fg[1 + epsilon_start + t] =
                     epsilon1 - ((f0 - y0) + (v0 * CppAD::sin(sigma0) * dt));
                 fg[1 + sigma_start + t] =
-                    sigma1 - ((theta0 - delta_e0) - v0 *- delta0 / L * dt); // 这里也是一样的右边乘了一个负号
+                    sigma1 - ((theta0 - delta_e0) - v0 * -delta0 / L * dt); // 这里也是一样的右边乘了一个负号
             }
         }
     };
@@ -378,6 +379,11 @@ namespace ns_control
         {
             vars_lowerbound[i] = -0.8;
             vars_upperbound[i] = 0.8;
+            // if (i >= delta_start + 1)
+            // {
+            //     vars_lowerbound[i] = -0.1 - vars_lowerbound[i - 1];
+            //     vars_upperbound[i] = 0.1 - vars_upperbound[i - 1];
+            // }
         }
         // 车油门的范围，也就是车加速度
         for (int i = a_start; i < n_state; i++)
